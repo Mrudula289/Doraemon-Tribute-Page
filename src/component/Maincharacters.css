@@ -1,0 +1,174 @@
+/* SECTION WRAPPER */
+.maincharacters-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, var(--light-blue) 0%, #f0f4ff 100%);
+  min-height: 100vh;
+}
+
+/* TITLE */
+.maincharacters-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.maincharacters-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-yellow));
+  border-radius: 3px;
+  box-shadow: 0 4px 15px rgba(30, 136, 229, 0.3);
+}
+
+/* GRID LAYOUT */
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .characters-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .maincharacters-section {
+    padding: 60px 15px;
+  }
+  
+  .maincharacters-title {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+  }
+  
+  .characters-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .maincharacters-section {
+    padding: 40px 15px;
+  }
+  
+  .maincharacters-title {
+    font-size: 1.8rem;
+  }
+  
+  .characters-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* CARD WRAPPER */
+.character-card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top: 4px solid var(--primary-yellow);
+}
+
+/* HOVER EFFECT */
+.character-card:hover {
+  transform: translateY(-15px);
+  box-shadow: var(--shadow-heavy);
+}
+
+/* IMAGE SECTION */
+.character-img {
+  width: 100%;
+  height: 240px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #00bcd4 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.character-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+  padding: 10px;
+}
+
+/* IMAGE HOVER ZOOM */
+.character-card:hover .character-img img {
+  transform: scale(1.12);
+}
+
+/* BODY */
+.character-body {
+  padding: 25px 20px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* NAME */
+.character-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+  letter-spacing: -0.5px;
+}
+
+/* ROLE */
+.character-role {
+  font-size: 0.95rem;
+  color: var(--primary-blue);
+  margin-bottom: 0;
+  font-weight: 600;
+}
+
+/* TRAITS CONTAINER */
+.character-traits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+}
+
+/* BADGES */
+.trait-badge {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+/* BADGE HOVER */
+.trait-badge:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
