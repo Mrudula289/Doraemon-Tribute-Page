@@ -1,0 +1,74 @@
+/* BackToTop.css */
+
+.back-to-top {
+  position: fixed;
+  bottom: -60px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #00bcd4 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-medium);
+    z-index: 999;
+}
+
+.back-to-top.visible {
+  bottom: 30px;
+  animation: slideUp 0.3s ease-out;
+}
+
+.back-to-top:hover {
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+  box-shadow: var(--shadow-heavy);
+  transform: translateY(-5px);
+}
+
+.back-to-top:active {
+  transform: translateY(0);
+}
+
+@keyframes slideUp {
+  from {
+    bottom: -60px;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    right: 20px;
+    font-size: 1.2rem;
+  }
+
+  .back-to-top.visible {
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    right: 15px;
+    font-size: 1rem;
+  }
+
+  .back-to-top.visible {
+    bottom: 15px;
+  }
+}
