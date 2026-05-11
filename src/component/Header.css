@@ -1,0 +1,224 @@
+/* Header.css */
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="30" r="1.5" fill="rgba(255,255,255,0.08)"/></svg>');
+  opacity: 0.3;
+  z-index: 0;
+}
+
+/* Hero overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 71, 161, 0.3), rgba(30, 136, 229, 0.2));
+  z-index: 1;
+}
+
+/* Content above overlay */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 40px 20px;
+  animation: fadeInUp 1s ease-out;
+}
+
+/* Heading styles */
+.hero h1 {
+  font-size: 3.8rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: white;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Paragraph styles */
+.hero p {
+  font-size: 1.4rem;
+  margin: 15px 0 30px 0;
+  color: rgba(255, 255, 255, 0.95);
+  font-weight: 500;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Button styles */
+.hero .btn {
+  margin-top: 30px;
+  padding: 12px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.hero .btn-primary {
+  background: linear-gradient(135deg, #0d6efd, #0a58ca);
+  color: white;
+  box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+.hero .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(13, 110, 253, 0.4);
+  background: linear-gradient(135deg, #0b5ed7, #0950b3);
+}
+
+.hero .btn-primary:active {
+  transform: translateY(0);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll indicator (optional) */
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+.scroll-indicator span {
+  display: block;
+  width: 30px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+}
+
+.scroll-indicator span::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 10px;
+  background: white;
+  border-radius: 2px;
+  animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+  0% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  .hero .btn {
+    padding: 10px 24px;
+    font-size: 0.95rem;
+    margin-top: 25px;
+  }
+  
+  .hero-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .hero .btn {
+    padding: 8px 20px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Optional: Add a subtle pattern overlay */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.05"><path fill="white" d="M10,10 L20,10 L20,20 L10,20 Z M30,30 L40,30 L40,40 L30,40 Z M50,50 L60,50 L60,60 L50,60 Z M70,70 L80,70 L80,80 L70,80 Z"/></svg>');
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* For browsers that support backdrop-filter */
+@supports (backdrop-filter: blur(5px)) {
+  .hero-overlay {
+    backdrop-filter: blur(2px);
+    background: rgba(0,0,0,0.5);
+  }
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
