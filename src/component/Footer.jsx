@@ -3,7 +3,7 @@ import './Footer.css'
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer-text">Made with ❤️ by Sanika</p>
+      <p className="footer-text">Made with ❤️ by Mrudula</p>
       <small className="footer-subtext">
         Doraemon Tribute Project © 2026
       </small>
